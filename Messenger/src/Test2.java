@@ -1,18 +1,22 @@
 import java.io.*;
+import java.util.*;
 
-public class Test2 {
-    public static void main(String [] args) {
+public class Test2 /*implements Runnable*/{
+    String group_name;
+    Test2(String group_name){
+        this.group_name = group_name;
+    }
+    public static void main(String [] args) /* public void run if using Runnable*/{
 
         // The name of the file to open.
-        String fileName = "lol.txt";
+        String fileName = group_name + ".txt";
 
         // This will reference one line at a time
         String line = null;
 
         try {
             // FileReader reads text files in the default encoding.
-            FileReader fileReader =
-                    new FileReader(fileName);
+            FileReader fileReader = new FileReader(fileName);
 
             // Always wrap FileReader in BufferedReader.
             BufferedReader bufferedReader =

@@ -1,17 +1,26 @@
+/* messages can be sent here after scanning
+   or messages can be scanned and stored using this
+ */
+
 import java.io.*;
 import java.util.*;
-public class Test3 {
-    public static void main(String [] args) {
+public class Test3 /* implements Runnable*/{
+    String group_name;
+    Test3(Sring group_name, /* Message if to be stored only */){
+        this.group_name = group_name;
+    }
+    public static void main(String [] args) /* public void run if using Runnable*/{
         Scanner sc = new Scanner(System.in);
         // The name of the file to open.
-        String fileName = "lol.txt";
+        String fileName = group_name + ".txt";
 
         try {
             // Assume default encoding.
-
+            if(// groupList doesnt contain group_name)  // This will create new file named group_name.txt
+            {
             FileWriter fileWriter =
                     new FileWriter(fileName);
-
+            }
             // Always wrap FileWriter in BufferedWriter.
             BufferedWriter bufferedWriter =
                     new BufferedWriter(fileWriter);
