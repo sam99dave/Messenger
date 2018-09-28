@@ -1,25 +1,24 @@
 import java.util.Vector;
 
 public class Group {
-    private static int count = 0;
 
-    private String Name;
+    public String Name;
+    private String Password;
     public Vector<Message> MessageList;
-    private Vector <Member> MemberList;
-    private Member Owner;
+    private Vector <NonAdmin> MemberList;
+    private Admin Owner;
 
-
-    Group (String Name, Member Owner) {
+    Group (String Name, Admin Owner, String Password) {
         this.Name = Name;
+        this.Password = Password;
         this.Owner = Owner;
         this.MemberList = new Vector<>();
         this.MessageList = new Vector<>();
-        Group.count += 1;
     }
 
 
     void addMember(Member NewMember) {
-        this.MemberList.add(NewMember);
+        this.MemberList.add((NonAdmin) NewMember);
     }
 
     void removeMember(Member OldMember){

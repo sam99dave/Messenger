@@ -1,6 +1,8 @@
 //import java.net.InetSocketAddress;
 
-abstract class Member implements Communicable {
+import java.util.Vector;
+
+class Member implements Communicable {
     private static long RND = 3579;
     long IDENTITY;
     String Name;
@@ -23,4 +25,23 @@ abstract class Member implements Communicable {
         // this.IP = IP;
     }
 
+    @Override
+    public void sendMessage(Message message, Group group) {
+
+    }
+
+    @Override
+    public Vector<Message> readMessage(Group group) {
+        return null;
+    }
+
+    @Override
+    public void enterGroup(Group group) {
+
+    }
+
+    @Override
+    public void exitGroup(Group group) {
+
+    }
 }
