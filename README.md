@@ -1,3 +1,3 @@
 # Messenger
 
-A GUI LAN Chat Client based on JavaFX.
+A GUI LAN Chat Client written with Java and JavaFX.
